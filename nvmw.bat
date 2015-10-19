@@ -34,8 +34,8 @@ if "%1" == "install" if not "%2" == "" (
 )
 
 if "%1" == "install" if "%2" == "" (
-  set \p version=<.nvmrc
-  call :install %version
+  set /P version=<.nvmrc
+  call :install %version%
   if not ERRORLEVEL == 1 call :use %2 %3
   exit /b %ERRORLEVEL%
 )
@@ -46,8 +46,8 @@ if "%1" == "use" if not "%2" == "" (
 )
 
 if "%1" == "use" if "%2" == "" (
-  set \p version=<.nvmrc
-  call :use %version
+  set /P version=<.nvmrc
+  call :use %version%
   exit /b %ERRORLEVEL%
 )
 
